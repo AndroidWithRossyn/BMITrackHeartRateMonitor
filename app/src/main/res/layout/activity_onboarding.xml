@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".Activity.OnboardingActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/native_ads"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="afterDescendants">
+
+            <ImageView
+                android:id="@+id/onBoarding_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/nextbtn"
+                android:src="@drawable/onboarding_one" />
+
+            <ImageView
+                android:id="@+id/nextbtn"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                android:elevation="20dp"
+                android:src="@drawable/next"
+                android:translationZ="20dp" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/native_ads"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="bottom"
+        android:layout_marginBottom="3dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" />
+
+
+</RelativeLayout>

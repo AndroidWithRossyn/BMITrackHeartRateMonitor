@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_heart_rate"
+        android:icon="@drawable/heart"
+        android:title="Heart Rate"
+        app:cnb_iconColor="#060047"/>
+
+    <item
+        android:id="@+id/nav_bmi_cal"
+        android:icon="@drawable/bmi"
+        android:title="BMI Calculator"
+        app:cnb_iconColor="#060047"/>
+
+    <item
+        android:id="@+id/nav_health"
+        android:icon="@drawable/ecg"
+        android:title="Health Tracker"
+        app:cnb_iconColor="#060047"/>
+
+    <item
+        android:id="@+id/nav_history"
+        android:icon="@drawable/past"
+        android:title="History"
+        app:cnb_iconColor="#060047"/>
+
+</menu>
