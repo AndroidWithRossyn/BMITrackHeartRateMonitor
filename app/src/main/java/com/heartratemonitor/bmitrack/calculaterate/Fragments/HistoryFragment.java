@@ -13,9 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.heartratemonitor.bmitrack.calculaterate.Adapter.HistoryAdapter;
-import com.heartratemonitor.bmitrack.calculaterate.AdsUtils.FirebaseADHandlers.AdUtils;
 import com.heartratemonitor.bmitrack.calculaterate.R;
-import com.heartratemonitor.bmitrack.calculaterate.models.DbModel;
+import com.heartratemonitor.bmitrack.calculaterate.db.DbModel;
 import com.heartratemonitor.bmitrack.calculaterate.viewModels.BMIViewModel;
 
 import java.util.List;
@@ -34,8 +33,7 @@ public class HistoryFragment extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_history, container, false);
         viewModel = new ViewModelProvider(this).get(BMIViewModel.class);
-        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ad), false);
-//        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ads), true);
+
         historyRv = root.findViewById(R.id.history_rv);
         empty = root.findViewById(R.id.empty_txt);
 

@@ -26,7 +26,6 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.heartratemonitor.bmitrack.calculaterate.AdsUtils.FirebaseADHandlers.AdUtils;
 import com.heartratemonitor.bmitrack.calculaterate.BuildConfig;
 import com.heartratemonitor.bmitrack.calculaterate.R;
 
@@ -49,8 +48,6 @@ public class DashboardActivity extends AppCompatActivity {
         bmiCal = findViewById(R.id.bmiCal);
         tracker = findViewById(R.id.tracker);
         history = findViewById(R.id.history);
-        AdUtils.showNativeAd(DashboardActivity.this, findViewById(R.id.native_ad), false);
-        AdUtils.showNativeAd(DashboardActivity.this, findViewById(R.id.native_ads), true);
 
         mCheckPermission();
 
@@ -74,37 +71,32 @@ public class DashboardActivity extends AppCompatActivity {
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AdUtils.showInterstitialAd(DashboardActivity.this, state_load -> {
                         startActivity(new Intent(getApplicationContext(), MainActivity.class).putExtra("fragmentName", "history"));
-                });
+
             }
         });
 
         tracker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AdUtils.showInterstitialAd(DashboardActivity.this, state_load -> {
                         startActivity(new Intent(getApplicationContext(), MainActivity.class).putExtra("fragmentName", "tracker"));
-                });
+
             }
         });
 
         bmiCal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AdUtils.showInterstitialAd(DashboardActivity.this,state_load -> {
-
                         startActivity(new Intent(getApplicationContext(), MainActivity.class).putExtra("fragmentName", "bmiCal"));
-                });
+
             }
         });
 
         heartRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AdUtils.showInterstitialAd(DashboardActivity.this, state_load -> {
                         startActivity(new Intent(getApplicationContext(), MainActivity.class).putExtra("fragmentName", "heartRate"));
-                });
+
             }
         });
 
@@ -294,21 +286,18 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     public void tAndU(View view) {
-        AdUtils.showInterstitialAd(DashboardActivity.this, state_load -> {
             startActivity(new Intent(getApplicationContext(), TermsAndUse.class));
-        });
+
     }
 
     public void aboutUS(View view) {
-        AdUtils.showInterstitialAd(DashboardActivity.this, state_load -> {
             startActivity(new Intent(getApplicationContext(), AboutActivity.class));
-        });
+
     }
 
     public void history(View view) {
-        AdUtils.showInterstitialAd(DashboardActivity.this, state_load -> {
             startActivity(new Intent(getApplicationContext(), MainActivity.class).putExtra("fragmentName", "history"));
-        });
+
     }
 
     public void pp(View view) {
@@ -322,9 +311,5 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        AdUtils.loadInitialInterstitialAds(DashboardActivity.this);
-        AdUtils.loadAppOpenAds(DashboardActivity.this);
-        AdUtils.loadInitialNativeList(this);
     }
 }

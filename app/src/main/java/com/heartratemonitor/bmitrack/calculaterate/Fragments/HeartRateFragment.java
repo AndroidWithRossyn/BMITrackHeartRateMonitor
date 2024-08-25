@@ -29,10 +29,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.heartratemonitor.bmitrack.calculaterate.AdsUtils.FirebaseADHandlers.AdUtils;
 import com.heartratemonitor.bmitrack.calculaterate.HelperClasses.ImageProcessing;
 import com.heartratemonitor.bmitrack.calculaterate.R;
-import com.heartratemonitor.bmitrack.calculaterate.models.DbModel;
+import com.heartratemonitor.bmitrack.calculaterate.db.DbModel;
 import com.heartratemonitor.bmitrack.calculaterate.viewModels.BMIViewModel;
 
 import java.text.DateFormat;
@@ -91,11 +90,6 @@ public class HeartRateFragment extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_heart_rate, container, false);
 
-        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ad), false);
-        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ads), true);
-//        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ads_2), true);
-        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ads_3), true);
-//        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ads4), true);
         viewModel = new ViewModelProvider(this).get(BMIViewModel.class);
 
 
@@ -176,7 +170,6 @@ public class HeartRateFragment extends Fragment {
 //            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
                 ll1.setVisibility(View.GONE);
                 ll2.setVisibility(View.VISIBLE);
-                AdUtils.showNativeAd(requireActivity(), nativead2, true);
 //            startprogress();
 //            progressBar.startProgress();
                 start.performClick();
@@ -285,7 +278,6 @@ public class HeartRateFragment extends Fragment {
     private void llThreeElements() {
 
         rest_rl.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
             radiobtnNo = 1;
             isRadiobtnChecked = true;
             rest_iv.setImageResource(R.drawable.radio_selected);
@@ -298,9 +290,7 @@ public class HeartRateFragment extends Fragment {
             playing_iv.setImageResource(R.drawable.radio_unselected);
             planting_iv.setImageResource(R.drawable.radio_unselected);
         });
-        });
         sit_rl.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
             radiobtnNo = 2;
             isRadiobtnChecked = true;
             rest_iv.setImageResource(R.drawable.radio_unselected);
@@ -313,10 +303,8 @@ public class HeartRateFragment extends Fragment {
             playing_iv.setImageResource(R.drawable.radio_unselected);
             planting_iv.setImageResource(R.drawable.radio_unselected);
         });
-        });
 
         stand_rl.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
             radiobtnNo = 3;
             isRadiobtnChecked = true;
             rest_iv.setImageResource(R.drawable.radio_unselected);
@@ -329,9 +317,7 @@ public class HeartRateFragment extends Fragment {
             playing_iv.setImageResource(R.drawable.radio_unselected);
             planting_iv.setImageResource(R.drawable.radio_unselected);
         });
-        });
         exercise_rl.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
             radiobtnNo = 4;
             isRadiobtnChecked = true;
             rest_iv.setImageResource(R.drawable.radio_unselected);
@@ -344,9 +330,7 @@ public class HeartRateFragment extends Fragment {
             playing_iv.setImageResource(R.drawable.radio_unselected);
             planting_iv.setImageResource(R.drawable.radio_unselected);
         });
-        });
         meditation_rl.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
             radiobtnNo = 5;
             isRadiobtnChecked = true;
             rest_iv.setImageResource(R.drawable.radio_unselected);
@@ -359,9 +343,7 @@ public class HeartRateFragment extends Fragment {
             playing_iv.setImageResource(R.drawable.radio_unselected);
             planting_iv.setImageResource(R.drawable.radio_unselected);
         });
-        });
         running_rl.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
             radiobtnNo = 6;
             isRadiobtnChecked = true;
             rest_iv.setImageResource(R.drawable.radio_unselected);
@@ -374,9 +356,7 @@ public class HeartRateFragment extends Fragment {
             playing_iv.setImageResource(R.drawable.radio_unselected);
             planting_iv.setImageResource(R.drawable.radio_unselected);
         });
-        });
         cooking_rl.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
             radiobtnNo = 7;
             isRadiobtnChecked = true;
             rest_iv.setImageResource(R.drawable.radio_unselected);
@@ -389,9 +369,7 @@ public class HeartRateFragment extends Fragment {
             playing_iv.setImageResource(R.drawable.radio_unselected);
             planting_iv.setImageResource(R.drawable.radio_unselected);
         });
-        });
         playing_rl.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
             radiobtnNo = 8;
             isRadiobtnChecked = true;
             rest_iv.setImageResource(R.drawable.radio_unselected);
@@ -404,9 +382,7 @@ public class HeartRateFragment extends Fragment {
             playing_iv.setImageResource(R.drawable.radio_selected);
             planting_iv.setImageResource(R.drawable.radio_unselected);
         });
-        });
         planting_rl.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
             radiobtnNo = 7;
             isRadiobtnChecked = true;
             rest_iv.setImageResource(R.drawable.radio_unselected);
@@ -419,10 +395,9 @@ public class HeartRateFragment extends Fragment {
             playing_iv.setImageResource(R.drawable.radio_unselected);
             planting_iv.setImageResource(R.drawable.radio_selected);
         });
-        });
 
         continuebtn_rl.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
+
 //            if (isRadiobtnChecked) {
             if (continuebtn_txt.getText().toString().equals("Continue")) {
                 radioll.setVisibility(View.GONE);
@@ -469,7 +444,6 @@ public class HeartRateFragment extends Fragment {
                 }
                 continuebtn_txt.setText("Done");
                 nativead4.setVisibility(View.VISIBLE);
-                AdUtils.showNativeAd(requireActivity(), nativead4, true);
                 viewModel.addToDB(new DbModel(Integer.parseInt(res.getText().toString()), selected_tv.getText().toString(), currentDate.getText().toString(), currentTime.getText().toString()));
 //                    insertIntoDB(Integer.parseInt(res.getText().toString()),selected_tv.getText().toString(),currentDate.getText().toString(),currentTime.getText().toString());
             } else {
@@ -493,7 +467,7 @@ public class HeartRateFragment extends Fragment {
 //            } else {
 //                Toast.makeText(context, "Please select your current state.", Toast.LENGTH_SHORT).show();
 //            }
-        });
+
         });
 
     }

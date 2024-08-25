@@ -7,15 +7,12 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.heartratemonitor.bmitrack.calculaterate.AdsUtils.FirebaseADHandlers.AdUtils;
 import com.heartratemonitor.bmitrack.calculaterate.R;
 
 public class OnboardingActivity extends AppCompatActivity {
@@ -31,19 +28,17 @@ public class OnboardingActivity extends AppCompatActivity {
         nextbtn = findViewById(R.id.nextbtn);
 
         native_ads=findViewById(R.id.native_ads);
-        AdUtils.showNativeAd(OnboardingActivity.this,native_ads, false);
+
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdUtils.showInterstitialAd(OnboardingActivity.this, state_load -> {
-                    if (i == 0) {
-                        i = 1;
-                        imageView.setImageResource(R.drawable.onboarding_two);
-                    } else {
-                        startActivity(new Intent(getApplicationContext(), TermsAndUse.class));
+                if (i == 0) {
+                    i = 1;
+                    imageView.setImageResource(R.drawable.onboarding_two);
+                } else {
+                    startActivity(new Intent(getApplicationContext(), TermsAndUse.class));
 
-                    }
-                });
+                }
             }
         });
 
@@ -126,10 +121,6 @@ public class OnboardingActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        AdUtils.loadInitialInterstitialAds(OnboardingActivity.this);
-        AdUtils.loadAppOpenAds(OnboardingActivity.this);
-        AdUtils.loadInitialNativeList(this);
     }
 
 }

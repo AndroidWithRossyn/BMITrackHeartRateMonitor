@@ -1,4 +1,4 @@
-package com.heartratemonitor.bmitrack.calculaterate.dao;
+package com.heartratemonitor.bmitrack.calculaterate.db;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -7,8 +7,6 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
-
-import com.heartratemonitor.bmitrack.calculaterate.models.DbModel;
 
 import java.util.List;
 

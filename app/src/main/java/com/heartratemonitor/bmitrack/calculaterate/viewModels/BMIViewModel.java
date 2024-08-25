@@ -8,9 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.heartratemonitor.bmitrack.calculaterate.dao.HeartRateDao;
+import com.heartratemonitor.bmitrack.calculaterate.db.HeartRateDao;
 import com.heartratemonitor.bmitrack.calculaterate.db.HeartRateDatabase;
-import com.heartratemonitor.bmitrack.calculaterate.models.DbModel;
+import com.heartratemonitor.bmitrack.calculaterate.db.DbModel;
 
 import java.util.List;
 

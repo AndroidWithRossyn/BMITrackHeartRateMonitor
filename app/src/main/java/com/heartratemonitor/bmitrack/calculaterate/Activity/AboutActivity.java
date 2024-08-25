@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.heartratemonitor.bmitrack.calculaterate.AdsUtils.FirebaseADHandlers.AdUtils;
 import com.heartratemonitor.bmitrack.calculaterate.R;
 
 public class AboutActivity extends AppCompatActivity {
@@ -26,7 +25,7 @@ public class AboutActivity extends AppCompatActivity {
         appVersion = findViewById(R.id.app_version);
         backbt = findViewById(R.id.backbt);
         native_ads=findViewById(R.id.native_ads);
-        AdUtils.showNativeAd(AboutActivity.this,native_ads, true);
+
 
 
         try {
@@ -49,15 +48,12 @@ public class AboutActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        AdUtils.loadInitialInterstitialAds(AboutActivity.this);
-        AdUtils.loadAppOpenAds(AboutActivity.this);
-        AdUtils.loadInitialNativeList(this);
     }
 
     @Override
     public void onBackPressed() {
-        AdUtils.showInterstitialAd(AboutActivity.this, state_load -> {
+
             AboutActivity.super.onBackPressed();
-        });
+
     }
 }

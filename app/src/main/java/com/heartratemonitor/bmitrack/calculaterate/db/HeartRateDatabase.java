@@ -6,9 +6,6 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.heartratemonitor.bmitrack.calculaterate.dao.HeartRateDao;
-import com.heartratemonitor.bmitrack.calculaterate.models.DbModel;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

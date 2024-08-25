@@ -14,10 +14,8 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.heartratemonitor.bmitrack.calculaterate.AdsUtils.FirebaseADHandlers.AdUtils;
 import com.heartratemonitor.bmitrack.calculaterate.R;
 
 public class BmiCalFragment extends Fragment {
@@ -38,8 +36,7 @@ public class BmiCalFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_bmi_cal, container, false);
-        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ad), false);
-        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ads), true);
+
         height_spinner = root.findViewById(R.id.height_spinner);
         weight_spinner = root.findViewById(R.id.weight_spinner);
         female = root.findViewById(R.id.female);
@@ -104,38 +101,32 @@ public class BmiCalFragment extends Fragment {
         });
 
         female.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
-                gender = "Female";
-                female.setImageResource(R.drawable.female_selected);
-                male.setImageResource(R.drawable.male_unselected);
-                gender_iv.setImageResource(R.drawable.ladki);
-            });
+            gender = "Female";
+            female.setImageResource(R.drawable.female_selected);
+            male.setImageResource(R.drawable.male_unselected);
+            gender_iv.setImageResource(R.drawable.ladki);
         });
         male.setOnClickListener(view -> {
-            AdUtils.showInterstitialAd(requireActivity(), isLoaded -> {
-                gender = "Male";
-                female.setImageResource(R.drawable.female_unselected);
-                male.setImageResource(R.drawable.male_selected);
-                gender_iv.setImageResource(R.drawable.ladka);
-            });
+            gender = "Male";
+            female.setImageResource(R.drawable.female_unselected);
+            male.setImageResource(R.drawable.male_selected);
+            gender_iv.setImageResource(R.drawable.ladka);
         });
 
         nextbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AdUtils.showInterstitialAd(requireActivity(), state_load -> {
-                        if (validateData()) {
-                            double heights = Double.parseDouble(height_et.getText().toString());
-                            double weights = Double.parseDouble(weight_et.getText().toString());
-                            ll2.setVisibility(View.VISIBLE);
-                            AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ads2), true);
-                            ll1.setVisibility(View.GONE);
-                            double bmivalue = calculateBMI(weights, weightUnit, heights, heightUnit);
-                            bmiValue.setText(String.format("%.2f", bmivalue));
-                            reprt(bmivalue);
+                if (validateData()) {
+                    double heights = Double.parseDouble(height_et.getText().toString());
+                    double weights = Double.parseDouble(weight_et.getText().toString());
+                    ll2.setVisibility(View.VISIBLE);
 
-                    }
-                });
+                    ll1.setVisibility(View.GONE);
+                    double bmivalue = calculateBMI(weights, weightUnit, heights, heightUnit);
+                    bmiValue.setText(String.format("%.2f", bmivalue));
+                    reprt(bmivalue);
+
+                }
             }
         });
 

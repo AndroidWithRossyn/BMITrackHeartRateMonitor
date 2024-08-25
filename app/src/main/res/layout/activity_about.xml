@@ -65,6 +65,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Owner: CodersSmile@Github"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="banrossyn@gmail.com | +919694260426"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Version :"
             android:textColor="@color/white"
             android:textSize="14sp"

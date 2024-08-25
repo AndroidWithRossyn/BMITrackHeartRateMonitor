@@ -20,9 +20,8 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.ValueFormatter;
-import com.heartratemonitor.bmitrack.calculaterate.AdsUtils.FirebaseADHandlers.AdUtils;
 import com.heartratemonitor.bmitrack.calculaterate.R;
-import com.heartratemonitor.bmitrack.calculaterate.models.DbModel;
+import com.heartratemonitor.bmitrack.calculaterate.db.DbModel;
 import com.heartratemonitor.bmitrack.calculaterate.viewModels.BMIViewModel;
 
 import java.util.ArrayList;
@@ -42,8 +41,7 @@ public class TrackerFragment extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_tracker, container, false);
         viewModel = new ViewModelProvider(this).get(BMIViewModel.class);
-        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ad), false);
-        AdUtils.showNativeAd(requireActivity(), root.findViewById(R.id.native_ads), true);
+
         heartbeat = root.findViewById(R.id.heart_beat);
         date = root.findViewById(R.id.date);
         time = root.findViewById(R.id.time);

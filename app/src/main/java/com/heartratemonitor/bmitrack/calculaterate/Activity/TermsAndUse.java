@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.heartratemonitor.bmitrack.calculaterate.AdsUtils.FirebaseADHandlers.AdUtils;
 import com.heartratemonitor.bmitrack.calculaterate.R;
 
 public class TermsAndUse extends AppCompatActivity {
@@ -21,16 +20,14 @@ public class TermsAndUse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terms_and_use);
         agreebtn = findViewById(R.id.agreebtn);
-        AdUtils.showNativeAd(TermsAndUse.this, findViewById(R.id.native_ads), false);
+
 
 
         agreebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdUtils.showInterstitialAd(TermsAndUse.this, state_load -> {
                     startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
 
-                });
             }
         });
 
@@ -48,17 +45,11 @@ public class TermsAndUse extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        AdUtils.showInterstitialAd(TermsAndUse.this, state_load -> {
             TermsAndUse.super.onBackPressed();
 
-        });
     }
     @Override
     protected void onResume() {
         super.onResume();
-
-        AdUtils.loadInitialInterstitialAds(TermsAndUse.this);
-        AdUtils.loadAppOpenAds(TermsAndUse.this);
-        AdUtils.loadInitialNativeList(this);
     }
 }

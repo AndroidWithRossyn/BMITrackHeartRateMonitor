@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
-import com.heartratemonitor.bmitrack.calculaterate.AdsUtils.FirebaseADHandlers.AdUtils;
 import com.heartratemonitor.bmitrack.calculaterate.Fragments.BmiCalFragment;
 import com.heartratemonitor.bmitrack.calculaterate.Fragments.HeartRateFragment;
 import com.heartratemonitor.bmitrack.calculaterate.Fragments.HistoryFragment;
@@ -68,9 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        AdUtils.showInterstitialAd(MainActivity.this,state_load -> {
             MainActivity.super.onBackPressed();
-        });
+
     }
 
 
@@ -107,10 +105,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        AdUtils.loadInitialInterstitialAds(MainActivity.this);
-        AdUtils.loadAppOpenAds(MainActivity.this);
-        AdUtils.loadInitialNativeList(this);
     }
 
 }

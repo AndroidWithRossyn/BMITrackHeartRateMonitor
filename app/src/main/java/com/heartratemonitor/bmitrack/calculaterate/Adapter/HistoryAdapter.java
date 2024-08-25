@@ -1,10 +1,8 @@
 package com.heartratemonitor.bmitrack.calculaterate.Adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.heartratemonitor.bmitrack.calculaterate.AdsUtils.FirebaseADHandlers.AdUtils;
 import com.heartratemonitor.bmitrack.calculaterate.R;
-import com.heartratemonitor.bmitrack.calculaterate.models.DbModel;
+import com.heartratemonitor.bmitrack.calculaterate.db.DbModel;
 
 import java.util.List;
 
@@ -47,13 +44,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         holder.state.setText(dbModels.get(position).getBodyState());
 
         String val = String.valueOf(holder.getAdapterPosition());
-        if (val.endsWith("4") || val.endsWith("9")) {
-            Log.e("onBindViewHolder: ", position + "   " + val + "   "+val.endsWith("4")+ "  "+val.endsWith("9"));
-            holder.nativeads.setVisibility(View.VISIBLE);
-            AdUtils.showNativeAd((Activity) context, holder.nativeads, true);
-        } else {
-            holder.nativeads.setVisibility(View.GONE);
-        }
 
         if (dbModels.get(position).getHeartBeat() >= 60 && dbModels.get(position).getHeartBeat() <= 100) {
             holder.color_heart.setImageResource(R.drawable.green_heart);
