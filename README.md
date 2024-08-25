@@ -66,7 +66,7 @@
 </p>
 
 
-### Find this library useful? ❤️
+### Find this Repository useful? ❤️
 Support it by joining stargazers for this repository. ⭐
 
 Also, [follow me on GitHub](https://github.com/AndroidWithRossyn/) for my next creations! 🤩
