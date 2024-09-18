@@ -61,9 +61,7 @@
   </p>
 
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&width=1980&section=footer"/>
-</p>
+
 
 
 ### Find this Repository useful? ❤️
@@ -101,3 +99,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&width=1980&section=footer"/>
+</p>
