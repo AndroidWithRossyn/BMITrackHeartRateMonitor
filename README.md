@@ -3,18 +3,9 @@
 
 <p align="center">
     <a href="">
-      <img src="https://github.com/AndroidWithRossyn/BMITrackHeartRateMonitor/blob/master/screenshots/graphics.jpg?raw=true" width="1280" />
+      <img src="./screenshots/graphics.jpg" width="1000" />
     </a>
   </p>
-
-<div align="center">
-<a href="mailto:banrossyn@gmail.com"><img src="https://img.shields.io/badge/Email-banrossyn%40gmail.com-blue"></a>
-<a href="https://wa.me/+919694260426/" target="_blank"><img src="https://img.shields.io/badge/whatsapp-%40+919694260426-28a8ea"></a>
-<a href="https://t.me/banrossyn" target="_blank"><img src="https://img.shields.io/badge/Telegram-%40banrossyn-28a8ea"></a>
-<a href="https://www.linkedin.com/in/banrossyn/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-banrossyn-informational"></a>
-
-</div>
-
 
 
 **BMITrackHeartRateMonitor** is a comprehensive health app designed to track your Body Mass Index (BMI) and monitor your heart rate in real-time. It offers personalized insights and helps you maintain a balanced lifestyle by keeping tabs on your vital health metrics. Whether you're aiming to achieve fitness goals or simply stay informed about your health, BMITrackHeartRateMonitor provides an easy-to-use interface and accurate data to support your wellness journey.
