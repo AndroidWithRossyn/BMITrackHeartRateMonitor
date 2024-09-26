@@ -3,7 +3,7 @@
 
 <p align="center">
     <a href="">
-      <img src="./screenshots/graphics.jpg" width="1000" />
+      <img src="https://github.com/dev-rossyn/BMITrackHeartRateMonitor/blob/master/screenshots/graphics.jpg?raw=true" width="1000" />
     </a>
   </p>
 
